@@ -196,3 +196,27 @@ def book(isbn):
         reviews = results.fetchall()
 
     return render_template("book.html", bookInfo=bookInfo, reviews=reviews)
+
+@app.route("/api/<isbn>", methods=["GET"])
+@login_required
+def api(isbn):
+    row = db.execute("SELECT isbn, title, author, year FROM books WHERE isbn=:isbn",
+                    {"isbn": isbn})
+    book = row.fetchall()
+
+    if not book:
+        return jsonify({"error": "Invalid book isbn"}), 404
+    
+    query = requests.get("https://www.goodreads.com/book/review_counts.json",
+                            params={"key":"hvTO0Vcq2r9Nrv04Rt4L4g", "isbns":isbn})
+    response = query.json()
+    response = response['books'][0]
+
+    return jsonify({
+        "title": book[0].title,
+        "author": book[0].author, 
+        "year": book[0].year,
+        "isbn": book[0].isbn,
+        "review_count": response['work_ratings_count'],
+        "average_score": response['average_rating']
+    })
