@@ -9,7 +9,7 @@ Search
     
     <h1 class="title-container">Search</h1>
 
-    <form action="{{ url_for('searchResults')}}" method="post">
+    <form action="{{ url_for('searchResults')}}" method="get">
         <div class="form-group" style="padding-top: 10px">
             <input autocomplete="off" autofocus type="name" class="form-control" name="search" placeholder="ISBN, Title, or Author">
             <small class="form-text text-muted">Example: 0375508325, Cosmos or Carl Sagan</small>
