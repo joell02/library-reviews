@@ -173,10 +173,10 @@ def book(isbn):
         bookInfo = db.execute("SELECT isbn, title, author, year FROM books WHERE isbn=:isbn",
                     {"isbn": isbn}).fetchall()
 
-        #key = os.getenv("GOODREADS_KEY")
+        key = os.getenv("GOODREADS_KEY")
 
         query = requests.get("https://www.goodreads.com/book/review_counts.json",
-                            params={"key":"hvTO0Vcq2r9Nrv04Rt4L4g", "isbns":isbn})
+                            params={"key": key , "isbns":isbn})
         response = query.json()
         response = response['books'][0]
         bookInfo.append(response)
