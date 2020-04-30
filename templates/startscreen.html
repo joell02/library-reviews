@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+
+{% block body %}
+    <style>
+        body {
+            background-image: url('../static/library.jpg');
+        }
+    </style>
+    <div class="title-container">
+        <div class="title">
+            <h1 id="title-top">Welcome to</h1>
+            <h1 id="title-bottom">Library Reviews</h1>
+            <div class="buttons">
+                <a class="btn btn-secondary" href="/login">Sign In</a>
+                <a class="btn btn-secondary" href="/register">Create Account</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

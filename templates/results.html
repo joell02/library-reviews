@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+
+{% block body %}
+<h1 class="title-results">Search Results</h1>
+
+
+<div class="container results-container">
+    {% for book in books %}
+    <div class="card text-white bg-dark mb-3" style="width: 12rem">
+        <div class="card-body">
+            <h4>{{book.title}}</h4>
+            <h5>{{book.author}}</h5>
+            <h6>{{book.year}}</h6>
+            <h6>{{book.isbn}}</h6>
+        </div>
+        <div class="card-footer">
+            <a href="/book/{{book.isbn}}" class="card-link">Go to book page</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

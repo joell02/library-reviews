@@ -1,0 +1,66 @@
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+.title-container{
+    text-align: center;
+    padding-top: 120px;
+    color: white;
+    text-shadow: 2px 2px rgb(84, 86, 89);
+}
+
+body {
+    background-color:black;
+}
+
+.btn {
+    margin: 10px;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+    color: white;
+}
+
+main a {
+    text-shadow: none;
+}
+
+.title-results {
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(84, 86, 89);
+}
+
+.results-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    padding-top: 30px;
+}
+
+.book-container {
+    color: white;   
+    text-shadow: 2px 2px rgb(84, 86, 89);
+}
+
+#goodreads {
+    margin-bottom: 20px;
+}
+
+.user-review-container {
+    border: 1px solid grey;
+}

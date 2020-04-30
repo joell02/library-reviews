@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+
+{% block body %}
+    
+    <h1 class="title-container">Search</h1>
+
+    <form action="{{ url_for('searchResults')}}" method="post">
+        <div class="form-group" style="padding-top: 10px">
+            <input autocomplete="off" autofocus type="name" class="form-control" name="search" placeholder="ISBN, Title, or Author">
+            <small class="form-text text-muted">Example: 0375508325, Cosmos or Carl Sagan</small>
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    
+    {% if error %}
+        <p>{{error}}</p>
+    {% endif %}
+
+{% endblock %}
