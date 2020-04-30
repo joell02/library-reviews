@@ -113,7 +113,7 @@ def search():
 @login_required
 def searchResults():
     error = None
-    search = request.form.get("search")
+    search = request.args.get("search")
     if not search:
         error='Nothing was entered. Please try again.'
         return render_template("search.html", error=error)
