@@ -109,7 +109,7 @@ def register():
 def search():
     return render_template("search.html")
 
-@app.route("/searchResults", methods=["GET", "POST"])
+@app.route("/searchResults", methods=["GET"])
 @login_required
 def searchResults():
     error = None
