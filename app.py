@@ -26,7 +26,7 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def index():
     return render_template("startscreen.html")
 
