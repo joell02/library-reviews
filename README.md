@@ -1,6 +1,6 @@
 Library Reviews
 
-Visit website at: https://library-reviews.herokuapp.com/
+Visit website at: https://library-reviews.herokuapp.com/ (Unfortunatley Goodreads has discontinued their API so website is not fully funtional anymore)
 
 This website is a platform on which bookworms can find thousands of books they read and leave a review and a rating of the book or view reviews and ratings left by other readers. This application utilizes HTML and CSS for the front end and python(flask) and SQL for the back end development. It also utilizes the goodreads api to make requests to get data on book reviews and ratings and there is also api access for this site in which each books data can be accessed.
 
